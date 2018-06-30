@@ -1,0 +1,57 @@
+;;; -*- coding: utf-8 -*-
+(("/home/will/Documents/coding/lisp/id3/id3-parsing.lisp" . 4154)
+ ("/home/will/.emacs.d/init.el" . 1328)
+ ("/home/will/Documents/coding/lisp/binary/packages.lisp" . 105)
+ ("/home/will/Documents/coding/lisp/binary/binary-data.asd" . 161)
+ ("/home/will/Documents/coding/lisp/id3/packages.lisp" . 331)
+ ("/home/will/Documents/coding/lisp/id3/"
+  (dired-filename . "/home/will/Documents/coding/lisp/id3/id3-parsing.lisp"))
+ ("/home/will/Documents/coding/lisp/binary/binary-data.lisp" . 10502)
+ ("/home/will/Documents/coding/lisp/macro-utils/macro-utils.asd" . 174)
+ ("/home/will/Documents/coding/lisp/macro-utils/packages.lisp" . 119)
+ ("/home/will/Documents/coding/lisp/macro-utils/macro-utils.lisp" . 522)
+ ("/home/will/Documents/coding/lisp/src/practicals-1.0.3/README.txt" . 1031)
+ ("/home/will/Documents/coding/lisp/spam/spamfilter.lisp" . 85)
+ ("/home/will/Documents/coding/lisp/spam/core.lisp" . 4255)
+ ("/home/will/Documents/coding/lisp/pathnames/paths.lisp" . 1875)
+ ("/home/will/Documents/coding/lisp/bank/banksystem.lisp" . 1697)
+ ("/home/will/Documents/coding/lisp/tests/test-framework.lisp" . 1215)
+ ("/home/will/Documents/coding/lisp/db/database.lisp" . 2007)
+ ("/home/will/.emacs.d/customizations/ui.el" . 286)
+ ("/home/will/.emacs.d/customizations/elisp-editing.el" . 1385)
+ ("/home/will/.emacs.d/customizations/editing.el" . 1586)
+ ("/home/will/.emacs.d/customizations/navigation.el" . 213)
+ ("/home/will/Documents/coding/"
+  (dired-filename . "/home/will/Documents/coding/lisp"))
+ ("/home/will/Documents/coding/lisp/"
+  (dired-filename . "/home/will/Documents/coding/lisp/.quicklisp"))
+ ("/home/will/.xsession" . 81)
+ ("/home/will/.emacs.d/elpa/lispy-20180608.958/lispy-autoloads.el" . 1132)
+ ("/home/will/.emacs.d/elpa/ace-window-20180607.1223/ace-window-autoloads.el" . 1608)
+ ("/home/will/.emacs.d/elpa/avy-20180615.801/avy-autoloads.el" . 7928)
+ ("/home/will/.emacs.d/elpa/iedit-20180207.219/iedit-autoloads.el" . 3077)
+ ("/home/will/.emacs.d/elpa/swiper-20180615.1400/swiper-autoloads.el" . 630)
+ ("/home/will/.emacs.d/elpa/hydra-20180508.1008/hydra-autoloads.el" . 2291)
+ ("/home/will/.emacs.d/elpa/zoutline-20180314.1059/zoutline-autoloads.el" . 230)
+ ("/home/will/.emacs.d/elpa/ido-vertical-mode-20180618.1401/ido-vertical-mode-autoloads.el" . 806)
+ ("/home/will/.emacs.d/customizations/setup-clojure.el" . 5134)
+ ("/home/will/Documents/gamedev/rltutorial/game.py" . 428)
+ ("/home/will/.emacs.d/.recentf" . 533)
+ ("/home/will/.emacs.d/ido.last" . 2493)
+ ("/home/will/.emacs.d/"
+  (dired-filename . "/home/will/.emacs.d/.."))
+ ("/home/will/"
+  (dired-filename . "/home/will/Documents"))
+ ("/home/will/Documents/"
+  (dired-filename . "/home/will/Documents/coding"))
+ ("/home/will/Documents/coding/clj/clojure-noob/"
+  (dired-filename . "/home/will/Documents/coding/clj/clojure-noob/.."))
+ ("/home/will/Documents/coding/clj/"
+  (dired-filename . "/home/will/Documents/coding/clj/macropotions"))
+ ("/home/will/Documents/coding/clj/macropotions/"
+  (dired-filename . "/home/will/Documents/coding/clj/macropotions/src"))
+ ("/home/will/Documents/coding/clj/macropotions/src/"
+  (dired-filename . "/home/will/Documents/coding/clj/macropotions/src/macropotions"))
+ ("/home/will/Documents/coding/clj/macropotions/src/macropotions/"
+  (dired-filename . "/home/will/Documents/coding/clj/macropotions/src/macropotions/core.clj"))
+ ("/home/will/Documents/coding/clj/macropotions/src/macropotions/core.clj" . 476))

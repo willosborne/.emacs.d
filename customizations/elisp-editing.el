@@ -1,0 +1,46 @@
+
+;; load paredit for lisp files
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of lisp" t)
+;; (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+;; (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+;; (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+;; (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+;; (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+;; (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook #'general-lisp-customisations)
+(add-hook 'lisp-mode-hook #'general-lisp-customisations)
+;; (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
+;; (add-hook 'lisp-mode-hook (lambda () (lispy-mode 1)))
+;; (add-hook 'lisp-interaction-mode-hook (lambda () (lispy-mode 1)))
+
+;; eldoc for documentation
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+
+(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
+;; stop SLIME grabbing DEL to stop it breaking paredit
+(defun override-slime-repl-bindings-paredit ()
+  (define-key slime-repl-mode-map
+    (read-kbd-macro paredit-backward-delete-key) nil))
+(add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-paredit)
+
+(defvar electrify-return-match
+  "[\]}\)\"]"
+  "If this regex matches text after cursor, do an \"electric\" return.")
+
+(defun electrify-return-if-match (arg)
+  "If text after cursor matches `electrify-return-match', then open and indent a new line between cursor and text. 
+Move cursor to new line."
+  (interactive "P")
+  (let ((case-fold-search nil))
+    (if (looking-at electrify-return-match)
+        (save-excursion (newline-and-indent)))
+    (newline arg)
+    (indent-according-to-mode)))
+
+(defun general-lisp-customisations ()
+  (paredit-mode t)
+  (local-set-key (kbd "RET") 'electrify-return-if-match)
+  (show-paren-mode t))
