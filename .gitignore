@@ -1,0 +1,9 @@
+*.elc
+*~
+ido.last
+/recentf
+/elpa
+/elpa-*
+/.recentf
+/.smex-items
+/projectile-bookmarps.eld
