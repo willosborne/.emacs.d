@@ -1,4 +1,5 @@
 (require 'package)
+(require 'xref)
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -18,8 +19,12 @@
 (require 'slime)
 (slime-setup '(slime-repl))
 
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
-(setq slime-contribs '(slime-fancy slime-asdf))
+;; (setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq inferior-lisp-program "/home/will/common-lisp/ccl/lx86cl64")
+(setq slime-contribs '(slime-fancy slime-asdf slime-quicklisp))
+
+;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; (setq inferior-lisp-program "sbcl")
 
 ;; (add-to-list 'load-path "~/.emacs.d/evil")
 
@@ -29,7 +34,7 @@
     paredit
     better-defaults
     
-    elpy
+    ;; elpy
     flycheck
 
     evil
@@ -53,7 +58,7 @@
 
     tagedit
 
-    ;; magit
+    magit
     ))
 
 (dolist (p my-packages)
@@ -84,7 +89,10 @@
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
-    ("7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" default))))
+    ("7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" default)))
+ '(package-selected-packages
+   (quote
+    (magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup lispy ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary elpy clojure-mode-extra-font-locking cider better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

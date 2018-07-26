@@ -11,11 +11,11 @@
 ;; (require 'evil)
 ;; (evil-mode 1)
 
-(elpy-enable)
+;; (elpy-enable)
 
-(when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+;; (when (require 'flycheck nil t)
+;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 ;; (global-evil-leader-mode)
 ;; (evil-leader/set-leader ",")
@@ -28,7 +28,7 @@
 ;; (global-hl-line-mode 1)
 
 
-;; Interactive search key bindings. By default, C-s runs
+; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
@@ -68,3 +68,5 @@
   (keyboard-quit))
 
 (setq electric-indent-mode nil)
+
+(setq org-startup-indented t)
