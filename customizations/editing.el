@@ -8,6 +8,7 @@
 	try-complete-lisp-symbol))
 
 
+
 ;; (require 'evil)
 ;; (evil-mode 1)
 
@@ -70,3 +71,40 @@
 (setq electric-indent-mode nil)
 
 (setq org-startup-indented t)
+
+;; c++ stuff
+(setq c-default-style "k&r")
+(global-set-key (kbd "RET") 'newline-and-indent)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
+
+(require 'cc-mode)
+
+;; completion
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+
+
+(setq company-backends (delete 'company-semantic company-backends))
+;; (define-key c-mode-map  [(tab)] 'company-complete)
+;; (define-key c++-mode-map  [(kbd "s-TAB")] 'company-complete)
+
+(setq mouse-wheel-progressive-speed nil)
+(global-set-key (kbd "<f5>") (lambda ()
+                               (interactive)
+                               (setq-local compilation-read-command nil)
+                               (call-interactively 'compile)))
+
+(defvar simple-todo-regex "\\(TODO\\|FIXME\\|NOTE\\)") 
+
+(defun simple-todo ()
+  "Display all TODO, NOTE and FIXME comments in a new buffer.
+If we're in a project, display for all in that project."
+  (interactive)
+  (if (projectile-project-p)
+      (multi-occur (projectile-project-buffers) simple-todo-regex)
+    (occur simple-todo-regex)))

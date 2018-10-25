@@ -1,14 +1,19 @@
 (require 'package)
 (require 'xref)
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa" . "http://melpa.org/packages/")))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
+
+
+
+;; (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+;; 			 ("marmalade" . "http://marmalade-repo.org/packages/")
+;; 			 ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
 (defvar ido-cur-item nil)
 (defvar ido-default-item nil)
@@ -28,7 +33,7 @@
 
 ;; (add-to-list 'load-path "~/.emacs.d/evil")
 
-
+;; (require 'better-defaults)
 (defvar my-packages
   '(
     paredit
@@ -59,6 +64,9 @@
     tagedit
 
     magit
+    
+    helm
+    helm-gtags
     ))
 
 (dolist (p my-packages)
@@ -75,10 +83,11 @@
 (load "ui.el")
 (load "misc.el")
 (load "elisp-editing.el")
+(load "haskell-editing.el")
 (load "setup-clojure.el")
 (load "setup-js.el")
-
-
+(load "helm-customisations.el")
+(load "evil-customisations.el")
 
 ;; LEAVE THIS ALONE, it does stuff for themes
 (custom-set-variables
@@ -90,9 +99,10 @@
  '(custom-safe-themes
    (quote
     ("7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" default)))
+ '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
-    (magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup lispy ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary elpy clojure-mode-extra-font-locking cider better-defaults))))
+    (yaml-mode function-args helm-gtags ggtags helm haskell-mode magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary elpy clojure-mode-extra-font-locking cider better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

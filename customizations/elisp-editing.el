@@ -45,11 +45,11 @@
   "If text after cursor matches `electrify-return-match', then open and indent a new line between cursor and text. 
 Move cursor to new line."
   (interactive "P")
-  (let ((case-fold-search nil))
-    (if (looking-at electrify-return-match)
-        (save-excursion (newline-and-indent)))
-    (newline arg)
-    (indent-according-to-mode)))
+  (let ((case-fold-search nil)) ;; case-sensitive match
+    (if (looking-at electrify-return-match) ;; if text after point matches regex
+        (save-excursion (newline-and-indent))) ;; save point, newline-and-indent, then jump back 
+    (newline arg) ;; insert the number of newlines defined by the prefix argument
+    (indent-according-to-mode))) ;; then indent as needed (this is to make it more general
 
 (defun general-lisp-customisations ()
   (paredit-mode t)
