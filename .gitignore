@@ -6,4 +6,6 @@ ido.last
 /elpa-*
 /.recentf
 /.smex-items
-/projectile-bookmarks.eld
+projectile-bookmarks.eld
+places
+network-security.data
