@@ -25,3 +25,4 @@
 
 ;; bind the extremely neat todo function defined in editing.el to C-c t in normal mode
 (define-key evil-normal-state-map (kbd "C-c t") 'simple-todo)
+(define-key evil-insert-state-map (kbd "C-c t") 'simple-todo)

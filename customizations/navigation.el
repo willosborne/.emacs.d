@@ -38,3 +38,11 @@
       (find-file file))))
 
 (global-set-key (kbd "C-c f") 'recentf-ido-find-file)
+
+(defun switch-to-last-buffer ()
+  "Switch to last open buffer"
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(global-set-key (kbd "C-c b") 'switch-to-last-buffer)
+(global-set-key (kbd "M-#") 'switch-to-last-buffer)
