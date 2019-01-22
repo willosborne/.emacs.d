@@ -17,7 +17,7 @@
 
 (ido-ubiquitous-mode 1)
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
@@ -46,3 +46,9 @@
 
 (global-set-key (kbd "C-c b") 'switch-to-last-buffer)
 (global-set-key (kbd "M-#") 'switch-to-last-buffer)
+
+
+(global-set-key (kbd "C-x g") 'magit-status)
+
+; rebind C-x C-0 to avoid clashes with C-x 0
+(global-set-key (kbd "C-x C-0") 'delete-window)

@@ -103,6 +103,10 @@
  '(org-agenda-files
    (quote
     ("~/Documents/CS/project/third-year-project-report/progress.org" "~/notes.org")))
+ '(org-format-latex-options
+   (quote
+    (:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+                 ("begin" "$1" "$" "$$" "\\(" "\\["))))
  '(org-latex-pdf-process
    (quote
     ("cd %o; LATEX=\"%latex\" texi2dvi -p -b -V %b.tex")))
