@@ -1,4 +1,3 @@
-
 ;; (menu-bar-mode -1)
 (tool-bar-mode -1)
 (global-linum-mode 1)
@@ -9,7 +8,9 @@
 (setq inhibit-startup-message t)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'tango-dark t)
+
+(require 'git-gutter-fringe+)
+(global-git-gutter+-mode)
 
 ;; (set-face-attribute 'default nil :height 140)
 
