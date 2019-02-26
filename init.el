@@ -10,7 +10,8 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-
+(eval-when-compile
+  (require 'use-package))
 
 ;; (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
 ;; 			 ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -21,8 +22,6 @@
 (defvar ido-cur-list nil)
 (defvar predicate nil)
 (defvar inherit-input-method nil)
-
-
 
 (require 'slime)
 (slime-setup '(slime-repl slime-banner))
@@ -38,8 +37,8 @@
 ;;           (lambda ()
 ;;             (slime-mode t)))
 
-(setq solarized-scale-org-headlines nil)
-(setq solarized-use-variable-pitch nil)
+;; (setq solarized-scale-org-headlines nil)
+;; (setq solarized-use-variable-pitch nil)
 
 ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
 ;; (setq inferior-lisp-program "sbcl")
@@ -49,7 +48,7 @@
 ;; (require 'better-defaults)
 (defvar my-packages
   '(
-    paredit
+    ;; paredit
     better-defaults
     
     ;; elpy
@@ -65,21 +64,11 @@
     
     slime
 
-    ido-ubiquitous
+    ;; projectile
 
-    smex
-
-    projectile
-    slime
-
-    rainbow-delimiters
+    ;; rainbow-delimiters
 
     tagedit
-
-    magit
-    
-    helm
-    helm-gtags
     ))
 
 (dolist (p my-packages)
@@ -164,9 +153,10 @@
  '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
-    (git-gutter-fringe+ gruvbox-theme vlf org-ref solarized-theme org-projectile-helm org-projectile yaml-mode function-args helm-gtags ggtags helm haskell-mode magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary elpy clojure-mode-extra-font-locking cider better-defaults)))
+    (telephone-line ag which-key helm-descbinds evil-surround use-package racket-mode git-gutter-fringe+ gruvbox-theme vlf org-ref solarized-theme org-projectile-helm org-projectile yaml-mode function-args helm-gtags ggtags helm haskell-mode magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary elpy clojure-mode-extra-font-locking cider better-defaults)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
+ '(recentf-max-saved-items 50)
  '(show-paren-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(term-default-bg-color "#002b36")

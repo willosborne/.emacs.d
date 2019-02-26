@@ -7,7 +7,12 @@
 	try-complete-lisp-symbol-partially
 	try-complete-lisp-symbol))
 
-
+(use-package undo-tree
+  :ensure t
+  :config (progn 
+            (global-undo-tree-mode 1)
+            ;; (defalias 'redo 'undo-tree-redo)
+            ))
 
 ;; (require 'evil)
 ;; (evil-mode 1)
@@ -57,9 +62,12 @@
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
 ;; (evil-commentary-mode)
 
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+;; (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (defun die-tabs ()
   (interactive)
@@ -107,4 +115,4 @@ If we're in a project, display for all in that project."
   (interactive)
   (if (projectile-project-p)
       (multi-occur (projectile-project-buffers) simple-todo-regex)
-    (occur simple-todo-regex)))
+    (helm-occur simple-todo-regex)))

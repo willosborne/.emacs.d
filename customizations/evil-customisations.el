@@ -1,8 +1,4 @@
-(require 'evil)
-(evil-mode 1)
-
-(define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line)
-(define-key evil-insert-state-map (kbd "C-e") 'evil-end-of-line)
+;; (use-package utils)
 
 (defun beginning-line-or-indentation ()
   "Move to beginning of line, or to match indentation if already there"
@@ -11,9 +7,25 @@
       (back-to-indentation) ;; jump to indentation
     (beginning-of-line))) ;; otherwise, jump to very start
 
-(define-key evil-normal-state-map (kbd "C-a") 'beginning-line-or-indentation)
-(define-key evil-insert-state-map (kbd "C-a") 'beginning-line-or-indentation)
+(use-package evil
+  :ensure t
+  ;; :defines beginning-line-or-indentation
+  ;; :functions beginning-line-or-indentation
+  ;; :load-path "customizations/"
+  :bind (:map evil-normal-state-map
+              ("C-e" . evil-end-of-line)
+              ("C-a" . beginning-line-or-indentation)
+              ("C-c t" . simple-todo)) ;; bind the extremely neat todo function defined in editing.el to C-c t in normal mode
+  :bind (:map evil-insert-state-map
+              ("C-e" . evil-end-of-line)
+              ("C-a" . beginning-line-or-indentation)
+              ("C-c t" . simple-todo))
+  :config (evil-mode 1))
 
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
 
 
 ;; (add-hook 'c-mode-common-hook #'(lambda ()
@@ -23,6 +35,5 @@
 ;;   (kbd "RET") 'electrify-return-if-match
 ;;   )
 
-;; bind the extremely neat todo function defined in editing.el to C-c t in normal mode
-(define-key evil-normal-state-map (kbd "C-c t") 'simple-todo)
-(define-key evil-insert-state-map (kbd "C-c t") 'simple-todo)
+
+;;TODO:

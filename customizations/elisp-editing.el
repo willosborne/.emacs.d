@@ -1,3 +1,6 @@
+(use-package paredit
+  :ensure t)
+
 
 ;; load paredit for lisp files
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of lisp" t)

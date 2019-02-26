@@ -19,5 +19,17 @@
 
 ;; (setq org-confirm-elisp-link-function nil)
 
-(require 'org-ref)
-(setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
+(use-package org
+  :ensure t
+  :mode ("\\.org\\'" . org-mode)
+  :commands (org-mode org-capture org-agenda)
+  :config 
+  (setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f")))
+
+(use-package org-ref
+  :ensure t
+  ;; :mode "\\.org\\'"
+  :after org
+  ;; :commands (org-mode org-capture org-agenda)
+  )
+
