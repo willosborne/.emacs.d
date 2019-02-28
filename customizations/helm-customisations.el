@@ -2,6 +2,7 @@
 
 (use-package helm
   :ensure t
+  :delight
   :bind (("M-x" . helm-M-x)
          ("C-x C-f" . helm-find-files)
          ("C-c f" . helm-recentf)

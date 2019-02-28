@@ -16,12 +16,20 @@
 ;; show git diff in fringe
 (use-package git-gutter-fringe+
   :ensure t
+  :delight git-gutter+-mode
   :config (global-git-gutter+-mode))
 
 ;; display key suggestions as you type
 (use-package which-key
   :ensure t
+  :delight
   :config (which-key-mode))
+
+(use-package eldoc
+  :delight)
+
+(use-package autorevert
+  :delight auto-revert-mode)
 
 (use-package telephone-line
   :ensure t

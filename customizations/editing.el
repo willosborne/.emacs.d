@@ -9,6 +9,7 @@
 
 (use-package undo-tree
   :ensure t
+  :delight
   :config (progn 
             (global-undo-tree-mode 1)
             ;; (defalias 'redo 'undo-tree-redo)
