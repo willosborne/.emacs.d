@@ -155,7 +155,7 @@
  '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
-    (delight telephone-line ag which-key helm-descbinds evil-surround use-package racket-mode git-gutter-fringe+ gruvbox-theme vlf org-ref solarized-theme org-projectile-helm org-projectile yaml-mode function-args helm-gtags ggtags helm haskell-mode magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary elpy clojure-mode-extra-font-locking cider better-defaults)))
+    (nlinum elpy helm-c-yasnippet ox-latex delight telephone-line ag which-key helm-descbinds evil-surround use-package racket-mode git-gutter-fringe+ gruvbox-theme vlf org-ref solarized-theme org-projectile-helm org-projectile yaml-mode function-args helm-gtags ggtags helm haskell-mode magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary clojure-mode-extra-font-locking cider better-defaults)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(recentf-max-saved-items 50)

@@ -12,9 +12,13 @@
   :delight
   :config (progn 
             (global-undo-tree-mode 1)
+            (setq undo-tree-enable-undo-in-region nil)
             ;; (defalias 'redo 'undo-tree-redo)
             ))
 
+
+(use-package elpy
+  :ensure t)
 ;; (require 'evil)
 ;; (evil-mode 1)
 

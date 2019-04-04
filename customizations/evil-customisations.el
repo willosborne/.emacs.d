@@ -15,11 +15,17 @@
   :bind (:map evil-normal-state-map
               ("C-e" . evil-end-of-line)
               ("C-a" . beginning-line-or-indentation)
-              ("C-c t" . simple-todo)) ;; bind the extremely neat todo function defined in editing.el to C-c t in normal mode
+              ("C-c t" . simple-todo)
+              ("j" . evil-next-visual-line)
+              ("k" . evil-previous-visual-line)
+              ("q" . nil)) ;; bind the extremely neat todo function defined in editing.el to C-c t in normal mode
   :bind (:map evil-insert-state-map
               ("C-e" . evil-end-of-line)
               ("C-a" . beginning-line-or-indentation)
               ("C-c t" . simple-todo))
+  :bind (:map evil-visual-state-map
+              ("j" . evil-next-visual-line)
+              ("k" . evil-previous-visual-line))
   :config (evil-mode 1))
 
 (use-package evil-surround
