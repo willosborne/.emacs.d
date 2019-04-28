@@ -1,10 +1,11 @@
 ;; (menu-bar-mode -1)
 (tool-bar-mode -1)
-;; (global-linum-mode 1)
 
 (use-package nlinum
   :ensure t
-  :config (global-nlinum-mode))
+  :config (global-nlinum-mode)
+  :demand
+  :bind (("C-c l" . nlinum-mode)))
 
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))

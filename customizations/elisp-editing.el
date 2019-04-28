@@ -59,3 +59,9 @@ Move cursor to new line."
   (local-set-key (kbd "RET") 'electrify-return-if-match)
   (show-paren-mode t)
   (prettify-symbols-mode))
+
+(use-package geiser
+  :ensure t
+  ;; :mode "\\.scm\\'"
+  :config (progn
+            (setq geiser-default-implementation 'chicken)))

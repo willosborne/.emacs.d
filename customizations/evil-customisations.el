@@ -7,6 +7,18 @@
       (back-to-indentation) ;; jump to indentation
     (beginning-of-line))) ;; otherwise, jump to very start
 
+(defun djoyner/evil-shift-left-visual ()
+  (interactive)
+  (evil-shift-left (region-beginning) (region-end))
+  (evil-normal-state)
+  (evil-visual-restore))
+
+(defun djoyner/evil-shift-right-visual ()
+  (interactive)
+  (evil-shift-right (region-beginning) (region-end))
+  (evil-normal-state)
+  (evil-visual-restore))
+
 (use-package evil
   :ensure t
   ;; :defines beginning-line-or-indentation
@@ -25,8 +37,12 @@
               ("C-c t" . simple-todo))
   :bind (:map evil-visual-state-map
               ("j" . evil-next-visual-line)
-              ("k" . evil-previous-visual-line))
+              ("k" . evil-previous-visual-line)
+              ;; Overload shifts so that they don't lose the selection
+              (">" . djoyner/evil-shift-right-visual)
+              ("<" . djoyner/evil-shift-left-visual))
   :config (evil-mode 1))
+
 
 (use-package evil-surround
   :ensure t
