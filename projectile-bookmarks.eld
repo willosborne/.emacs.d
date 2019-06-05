@@ -1,1 +1,0 @@
-("~/.emacs.d/" "~/.config/i3/" "~/Documents/coding/clj/macropotions/")
