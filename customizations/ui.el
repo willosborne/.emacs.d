@@ -75,3 +75,7 @@
 (setq ring-bell-function 'ignore)
 
 (windmove-default-keybindings)
+
+;; This makes whole frame slightly transparent, including text. No idea how to do background only. Ignoring for now.
+;; (set-frame-parameter (selected-frame) 'alpha '(90 90))
+;; (add-to-list 'default-frame-alist '(alpha 90 90))

@@ -1,11 +1,13 @@
-(global-set-key (kbd "M-/") 'hippie-expand)
+(require 'utils)
 
-(setq hippie-expand-try-functions-list
-      '(try-expand-dabbrev
-	try-expand-dabbrev-all-buffers
-	try-expand-dabbrev-from-kill
-	try-complete-lisp-symbol-partially
-	try-complete-lisp-symbol))
+;; (global-set-key (kbd "M-/") 'hippie-expand)
+
+;; (setq hippie-expand-try-functions-list
+;;       '(try-expand-dabbrev
+;; 	try-expand-dabbrev-all-buffers
+;; 	try-expand-dabbrev-from-kill
+;; 	try-complete-lisp-symbol-partially
+;; 	try-complete-lisp-symbol))
 
 (use-package undo-tree
   :ensure t
@@ -87,14 +89,28 @@
 
 ;; c++ stuff
 (setq c-default-style "k&r")
-(global-set-key (kbd "RET") 'newline-and-indent)
+;; (global-set-key (kbd "RET") 'newline-and-indent)
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 
-(require 'cc-mode)
+;; (require 'cc-mode)
+
+(general-define-key
+ :states 'insert
+ ;; :keymaps 'c-mode-base-map
+ "RET" 'electrify-return-if-match)
+
+(use-package cc-mode
+  ;; :mode ("\\.cpp\\'" "\\.cxx\\'" "\\.c\\'" "\\.h\\'" "\\.hpp\\'" "\\.hxx\\'")
+  :defer t
+  :hook (c-mode-common . electric-pair-local-mode))
+
+;; (use-package smartparens
+;;   :ensure t
+;;   :after cc-mode)
 
 ;; completion
 (require 'company)
