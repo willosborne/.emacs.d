@@ -137,3 +137,22 @@ If we're in a project, display for all in that project."
   (if (projectile-project-p)
       (multi-occur (projectile-project-buffers) simple-todo-regex)
     (helm-occur simple-todo-regex)))
+
+(use-package fish-mode
+  :ensure t
+  :mode "\\.fish\\'")
+
+;; (use-package typescript-mode
+;;   :ensure t
+;;   :mode "\\.ts\\'")
+
+(use-package web-mode
+  :ensure t
+  :mode ("\\.html\\'" "\\.htm\\'"))
+
+(use-package emmet-mode
+  :ensure t
+  :hook web-mode
+  :general (:states 'motion
+                    "C-c C-c C-w" 'emmet-wrap-with-markup))
+

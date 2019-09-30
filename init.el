@@ -126,6 +126,7 @@
    (quote
     ("1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177f" "a22f40b63f9bc0a69ebc8ba4fbc6b452a4e3f84b80590ba0a92b4ff599e53ad0" "585942bb24cab2d4b2f74977ac3ba6ddbd888e3776b9d2f993c5704aa8bb4739" "8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" default)))
  '(fci-rule-color "#073642")
+ '(geiser-default-implementation (quote chicken))
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -167,7 +168,7 @@
  '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
-    (color-theme-monokai general markdown-mode+ nlinum elpy helm-c-yasnippet ox-latex delight telephone-line ag which-key helm-descbinds evil-surround use-package racket-mode git-gutter-fringe+ gruvbox-theme vlf org-ref solarized-theme org-projectile-helm org-projectile yaml-mode function-args helm-gtags ggtags helm haskell-mode magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary clojure-mode-extra-font-locking cider better-defaults)))
+    (transpose-frame emmet-mode web-mode ng2-mode typescript-mode fish-mode color-theme-monokai general markdown-mode+ nlinum elpy helm-c-yasnippet ox-latex delight telephone-line ag which-key helm-descbinds evil-surround use-package racket-mode git-gutter-fringe+ gruvbox-theme vlf org-ref solarized-theme org-projectile-helm org-projectile yaml-mode function-args helm-gtags ggtags helm haskell-mode magit scheme-complete tagedit smex slime s12cpuv2-mode rainbow-delimiters projectile paredit magit-popup ido-vertical-mode ido-ubiquitous git-commit ghub geiser flycheck evil-leader evil-commentary clojure-mode-extra-font-locking cider better-defaults)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(recentf-max-saved-items 100)

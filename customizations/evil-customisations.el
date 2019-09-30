@@ -19,6 +19,18 @@
   (evil-normal-state)
   (evil-visual-restore))
 
+(defun smart-backward-kill-word ()
+  (interactive)
+  (if (boundp 'paredit-mode)
+      (progn
+        (if (sexp-at-point) 
+            (kill-sexp -1)
+          (delete-horizontal-space))
+        (when (bolp)
+          (paredit-backward-delete)
+          (indent-for-tab-command)))
+    (backward-kill-word)))
+
 (use-package evil
   :ensure t
   ;; :defines beginning-line-or-indentation
@@ -34,7 +46,8 @@
   :bind (:map evil-insert-state-map
               ("C-e" . evil-end-of-line)
               ("C-a" . beginning-line-or-indentation)
-              ("C-c t" . simple-todo))
+              ("C-c t" . simple-todo)
+              ("C-<backspace>" . smart-backward-kill-word))
   :bind (:map evil-visual-state-map
               ("j" . evil-next-visual-line)
               ("k" . evil-previous-visual-line)

@@ -1,7 +1,8 @@
 (require 'utils)
 
 (use-package paredit
-  :ensure t)
+  :ensure t
+  :hook (clojure-mode))
 
 
 ;; load paredit for lisp files
@@ -54,3 +55,10 @@
   ;; :mode "\\.scm\\'"
   :config (progn
             (setq geiser-default-implementation 'chicken)))
+
+(use-package clojure-mode
+  :ensure t)
+
+(use-package cider 
+  :ensure t)
+
